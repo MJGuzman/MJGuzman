@@ -44,6 +44,6 @@ const renderPortfolio = (data) => {
   document.querySelector('.contact-links a:nth-child(3)').href = data.contact.linkedin;
 };
 
-fetch('content.json?v=2').then((response) => response.json()).then(renderPortfolio).catch(() => {
+fetch('content.json?v=3').then((response) => response.json()).then(renderPortfolio).catch(() => {
   // The HTML contains a fallback version if content.json is unavailable.
 });
