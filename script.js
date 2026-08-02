@@ -23,3 +23,27 @@ const repairText = (node) => {
 };
 const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
 while (walker.nextNode()) repairText(walker.currentNode);
+
+const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({
+  '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+}[character]));
+
+const renderPortfolio = (data) => {
+  document.querySelector('.brand span:last-child').innerHTML = escapeHtml(data.brand).replace(' ', ' <em>') + '</em>';
+  document.querySelector('.eyebrow').innerHTML = `<span class="status-dot"></span> ${escapeHtml(data.hero.eyebrow)}`;
+  document.querySelector('.hero h1').innerHTML = `${escapeHtml(data.hero.titleLineOne)}<br /><span>${escapeHtml(data.hero.titleAccent)}</span> ${escapeHtml(data.hero.titleLineTwo)}`;
+  document.querySelector('.hero-text').textContent = data.hero.description;
+  document.querySelector('.hero-tech').innerHTML = `<span>Especializado en</span>${data.hero.specialties.map((item) => `<strong>${escapeHtml(item)}</strong>`).join('')}`;
+  document.querySelector('.about h2').innerHTML = `${escapeHtml(data.about.title[0])}<br /><span>${escapeHtml(data.about.title[1])}</span><br />${escapeHtml(data.about.title[2])}`;
+  document.querySelector('.about-copy').innerHTML = data.about.paragraphs.map((item) => `<p>${escapeHtml(item)}</p>`).join('');
+  document.querySelector('.stats').innerHTML = data.stats.map((item) => `<div><strong>${escapeHtml(item.value)}</strong><span>${escapeHtml(item.label)}</span></div>`).join('');
+  document.querySelector('.timeline').innerHTML = data.experience.map((item, index) => `<article class="timeline-item${item.current ? ' current' : ''}"><div class="timeline-marker"></div><div class="timeline-meta"><span>${escapeHtml(item.period)}</span><b>${String(index + 1).padStart(2, '0')}</b></div><div class="timeline-content"><h3>${escapeHtml(item.role)}</h3><p class="company">${escapeHtml(item.company)}${item.client ? ` <span>â†’ ${escapeHtml(item.client)}</span>` : ''}</p><p>${escapeHtml(item.description)}</p><div class="tags">${item.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}</div></div></article>`).join('');
+  document.querySelector('.stack-grid').innerHTML = data.stack.map((item) => `<div class="stack-card"><span class="stack-icon">${escapeHtml(item.icon)}</span><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></div>`).join('');
+  document.querySelector('.contact-links a:nth-child(1)').href = `mailto:${data.contact.email}`;
+  document.querySelector('.contact-links a:nth-child(2)').href = data.contact.github;
+  document.querySelector('.contact-links a:nth-child(3)').href = data.contact.linkedin;
+};
+
+fetch('content.json').then((response) => response.json()).then(renderPortfolio).catch(() => {
+  // The HTML contains a fallback version if content.json is unavailable.
+});
