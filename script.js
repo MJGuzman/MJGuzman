@@ -51,6 +51,6 @@ const renderPortfolio = (data) => {
   while (renderedWalker.nextNode()) repairText(renderedWalker.currentNode);
 };
 
-fetch('content.json?v=3').then((response) => response.json()).then(renderPortfolio).catch(() => {
+fetch('content.json?v=4').then((response) => response.json()).then(renderPortfolio).catch(() => {
   // The HTML contains a fallback version if content.json is unavailable.
 });
