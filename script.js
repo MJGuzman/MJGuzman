@@ -3,7 +3,7 @@ const menuToggle = document.querySelector('.menu-toggle');
 const mobileNav = document.querySelector('.mobile-nav');
 const savedTheme = localStorage.getItem('portfolio-theme');
 if (savedTheme === 'dark') document.body.classList.add('dark');
-themeToggle.addEventListener('click', () => { document.body.classList.toggle('dark'); localStorage.setItem('portfolio-theme', document.body.classList.contains('dark') ? 'dark' : 'light'); themeToggle.textContent = document.body.classList.contains('dark') ? 'â˜¾' : 'â˜¼'; });
+themeToggle.addEventListener('click', () => { document.body.classList.toggle('dark'); localStorage.setItem('portfolio-theme', document.body.classList.contains('dark') ? 'dark' : 'light'); themeToggle.textContent = document.body.classList.contains('dark') ? '\u263e' : '\u263c'; });
 menuToggle.addEventListener('click', () => { const isOpen = mobileNav.classList.toggle('open'); menuToggle.setAttribute('aria-expanded', isOpen); });
 document.querySelectorAll('.mobile-nav a').forEach((link) => link.addEventListener('click', () => mobileNav.classList.remove('open')));
 document.querySelector('#year').textContent = new Date().getFullYear();
@@ -14,7 +14,12 @@ const mojibakeMap = {
   '\u00c3\u00b3': '\u00f3', '\u00c3\u00ba': '\u00fa', '\u00c3\u00b1': '\u00f1',
   '\u00c3\u0081': '\u00c1', '\u00c3\u0089': '\u00c9', '\u00c3\u008d': '\u00cd',
   '\u00c3\u0093': '\u00d3', '\u00c3\u009a': '\u00da', '\u00c3\u0091': '\u00d1',
-  '\u00c2\u00bf': '\u00bf', '\u00c2\u00a1': '\u00a1', '\u00c2\u00a9': '\u00a9'
+  '\u00c2\u00bf': '\u00bf', '\u00c2\u00a1': '\u00a1', '\u00c2\u00a9': '\u00a9',
+  '\\u00e2\\u2020\\u2014': '\\u2197', '\\u00e2\\u2020\\u2019': '\\u2192', '\\u00e2\\u2020\\u2018': '\\u2191',
+  '\\u00e2\\u02dc\\u00bc': '\\u263c', '\\u00e2\\u02dc\\u00be': '\\u263e', '\\u00e2\\u0153\\u201c': '\\u2713',
+  '\\u00e2\\u0153\\u00a6': '\\u2726', '\\u00e2\\u0153\\u2030': '\\u2709', '\\u00e2\\u2014\\u2030': '\\u25c9',
+  '\\u00e2\\u2014\\u02c6': '\\u25c8', '\\u00e2\\u2013\\u00a6': '\\u25a6', '\\u00e2\\u2020\\u201d': '\\u2194',
+  '\\u00e2\\u20ac\\u201d': '\\u2014',
 };
 const repairText = (node) => {
   let text = node.nodeValue;
@@ -42,6 +47,8 @@ const renderPortfolio = (data) => {
   document.querySelector('.contact-links a:nth-child(1)').href = `mailto:${data.contact.email}`;
   document.querySelector('.contact-links a:nth-child(2)').href = data.contact.github;
   document.querySelector('.contact-links a:nth-child(3)').href = data.contact.linkedin;
+  const renderedWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  while (renderedWalker.nextNode()) repairText(renderedWalker.currentNode);
 };
 
 fetch('content.json?v=3').then((response) => response.json()).then(renderPortfolio).catch(() => {
