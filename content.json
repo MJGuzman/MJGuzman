@@ -5,60 +5,110 @@
     "titleLineOne": "Construyo soluciones",
     "titleAccent": "que hacen avanzar",
     "titleLineTwo": "los equipos.",
-    "description": "Desarrollador de software con mÃ¡s de seis aÃ±os creando soluciones empresariales robustas, integraciones y experiencias mÃ³viles multiplataforma.",
-    "specialties": [".NET", "Flutter", "APIs REST"]
+    "description": "Desarrollador de software con m\u00e1s de seis a\u00f1os creando soluciones empresariales robustas, integraciones y experiencias m\u00f3viles multiplataforma.",
+    "specialties": [
+      ".NET",
+      "Flutter",
+      "APIs REST"
+    ]
   },
   "about": {
-    "title": ["La tecnologÃ­a es", "una herramienta.", "El valor es el objetivo."],
+    "title": [
+      "La tecnolog\u00eda es",
+      "una herramienta.",
+      "El valor es el objetivo."
+    ],
     "paragraphs": [
-      "Me especializo en el diseÃ±o, desarrollo y mantenimiento de soluciones empresariales. He participado en proyectos de telecomunicaciones, consumo masivo, instituciones pÃºblicas y gestiÃ³n farmacÃ©utica.",
-      "Me caracterizan el pensamiento analÃ­tico, la capacidad de aprendizaje y el compromiso con la mejora continua. Disfruto transformar problemas complejos en soluciones claras, Ãºtiles y sostenibles."
+      "Me especializo en el dise\u00f1o, desarrollo y mantenimiento de soluciones empresariales. He participado en proyectos de telecomunicaciones, consumo masivo, instituciones p\u00fablicas y gesti\u00f3n farmac\u00e9utica.",
+      "Me caracterizan el pensamiento anal\u00edtico, la capacidad de aprendizaje y el compromiso con la mejora continua. Disfruto transformar problemas complejos en soluciones claras, \u00fatiles y sostenibles."
     ]
   },
   "stats": [
-    { "value": "6+", "label": "AÃ±os de experiencia" },
-    { "value": "4", "label": "Industrias exploradas" },
-    { "value": "âˆž", "label": "Curiosidad por aprender" }
+    {
+      "value": "6+",
+      "label": "A\u00f1os de experiencia"
+    },
+    {
+      "value": "4",
+      "label": "Industrias exploradas"
+    },
+    {
+      "value": "\u221e",
+      "label": "Curiosidad por aprender"
+    }
   ],
   "experience": [
     {
-      "period": "SEP 2022 â€” ACTUALIDAD",
+      "period": "SEP 2022 \u2014 ACTUALIDAD",
       "role": "Backend Developer",
       "company": "BMA Group",
       "client": "Contratista para AB InBev",
-      "description": "Desarrollo y mantenimiento de aplicaciones empresariales internas. Implemento funcionalidades backend, resuelvo incidencias y colaboro con equipos multidisciplinarios para asegurar la evoluciÃ³n y estabilidad de las soluciones.",
-      "tags": [".NET", "C#", "APIs"],
+      "description": "Desarrollo y mantenimiento de aplicaciones empresariales internas. Implemento funcionalidades backend, resuelvo incidencias y colaboro con equipos multidisciplinarios para asegurar la evoluci\u00f3n y estabilidad de las soluciones.",
+      "tags": [
+        ".NET",
+        "C#",
+        "APIs"
+      ],
       "current": true
     },
     {
-      "period": "JUN 2022 â€” ACTUALIDAD",
+      "period": "JUN 2022 \u2014 ACTUALIDAD",
       "role": "Flutter Developer",
       "company": "XpertCode",
       "client": "Contratista para Claro Dominicana",
-      "description": "Desarrollo y mantenimiento de aplicaciones mÃ³viles empresariales. Creo funcionalidades, integro servicios backend y trabajo en la mejora del rendimiento y la experiencia de uso.",
-      "tags": ["Flutter", "Dart", "REST"],
+      "description": "Desarrollo y mantenimiento de aplicaciones m\u00f3viles empresariales. Creo funcionalidades, integro servicios backend y trabajo en la mejora del rendimiento y la experiencia de uso.",
+      "tags": [
+        "Flutter",
+        "Dart",
+        "REST"
+      ],
       "current": true
     },
     {
-      "period": "ABR 2021 â€” MAY 2022",
+      "period": "ABR 2021 \u2014 MAY 2022",
       "role": "Full Stack Developer",
       "company": "INABIMA",
-      "description": "Desarrollo de aplicaciones web con .NET Core, React y SQL Server. TambiÃ©n administrÃ© y mantuve el portal institucional desarrollado en WordPress.",
-      "tags": [".NET Core", "React", "SQL Server"]
+      "description": "Desarrollo de aplicaciones web con .NET Core, React y SQL Server. Tambi\u00e9n administr\u00e9 y mantuve el portal institucional desarrollado en WordPress.",
+      "tags": [
+        ".NET Core",
+        "React",
+        "SQL Server"
+      ]
     },
     {
-      "period": "OCT 2019 â€” ABR 2021",
+      "period": "OCT 2019 \u2014 ABR 2021",
       "role": "Backend Developer",
       "company": "Farmatrix",
-      "description": "Desarrollo de soluciones para procesamiento de datos, sincronizaciÃ³n con Microsoft Dynamics GP, inventarios y aplicaciones web y mÃ³viles.",
-      "tags": ["C#", "Xamarin", "Flutter", "Dynamics GP"]
+      "description": "Desarrollo de soluciones para procesamiento de datos, sincronizaci\u00f3n con Microsoft Dynamics GP, inventarios y aplicaciones web y m\u00f3viles.",
+      "tags": [
+        "C#",
+        "Xamarin",
+        "Flutter",
+        "Dynamics GP"
+      ]
     }
   ],
   "stack": [
-    { "icon": "{ }", "title": "Backend", "description": "C#, .NET, .NET Core, ASP.NET y APIs REST." },
-    { "icon": "â—ˆ", "title": "Frontend & mÃ³vil", "description": "Flutter, React, Xamarin Android y WordPress." },
-    { "icon": "â–¦", "title": "Datos", "description": "SQL Server, PostgreSQL, FoxPro y procesos de sincronizaciÃ³n." },
-    { "icon": "â†”", "title": "Integraciones", "description": "Microsoft Dynamics GP y servicios empresariales." }
+    {
+      "icon": "{ }",
+      "title": "Backend",
+      "description": "C#, .NET, .NET Core, ASP.NET y APIs REST."
+    },
+    {
+      "icon": "\u25c8",
+      "title": "Frontend & m\u00f3vil",
+      "description": "Flutter, React, Xamarin Android y WordPress."
+    },
+    {
+      "icon": "\u25a6",
+      "title": "Datos",
+      "description": "SQL Server, PostgreSQL, FoxPro y procesos de sincronizaci\u00f3n."
+    },
+    {
+      "icon": "\u2194",
+      "title": "Integraciones",
+      "description": "Microsoft Dynamics GP y servicios empresariales."
+    }
   ],
   "contact": {
     "email": "misaeljesus2309@gmail.com",
