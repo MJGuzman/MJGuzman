@@ -43,6 +43,10 @@ const renderPortfolio = (data) => {
   document.querySelector('.about-copy').innerHTML = data.about.paragraphs.map((item) => `<p>${escapeHtml(item)}</p>`).join('');
   document.querySelector('.stats').innerHTML = data.stats.map((item) => `<div><strong>${escapeHtml(item.value)}</strong><span>${escapeHtml(item.label)}</span></div>`).join('');
   document.querySelector('.timeline').innerHTML = data.experience.map((item, index) => `<article class="timeline-item${item.current ? ' current' : ''}"><div class="timeline-marker"></div><div class="timeline-meta"><span>${escapeHtml(item.period)}</span><b>${String(index + 1).padStart(2, '0')}</b></div><div class="timeline-content"><h3>${escapeHtml(item.role)}</h3><p class="company">${escapeHtml(item.company)}${item.client ? ` <span>â†’ ${escapeHtml(item.client)}</span>` : ''}</p><p>${escapeHtml(item.description)}</p><div class="tags">${item.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}</div></div></article>`).join('');
+  document.querySelector('.projects-grid').innerHTML = data.projects.map((item, index) => {
+    const content = `<div class="project-visual project-${escapeHtml(item.accent)}"><div class="project-phone"><img src="${escapeHtml(item.image)}" alt="Captura completa de ${escapeHtml(item.name)}" loading="lazy" /></div><span class="project-number">${String(index + 1).padStart(2, '0')}</span></div><div class="project-copy"><div class="project-meta"><span>${escapeHtml(item.kicker)}</span><b>${escapeHtml(item.status)}</b></div><h3>${escapeHtml(item.name)}</h3><p>${escapeHtml(item.description)}</p><ul>${item.features.map((feature) => `<li>${escapeHtml(feature)}</li>`).join('')}</ul><div class="project-footer"><div class="project-tags">${item.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}</div>${item.url ? '<span class="project-link">Ver código <b>↗</b></span>' : '<span class="project-private">Caso de estudio</span>'}</div></div>`;
+    return item.url ? `<a class="project-card${item.featured ? ' featured' : ''}" href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer" aria-label="Ver ${escapeHtml(item.name)} en GitHub">${content}</a>` : `<article class="project-card${item.featured ? ' featured' : ''}">${content}</article>`;
+  }).join('');
   document.querySelector('.stack-grid').innerHTML = data.stack.map((item) => `<div class="stack-card"><span class="stack-icon">${escapeHtml(item.icon)}</span><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></div>`).join('');
   document.querySelector('.contact-links a:nth-child(1)').href = `mailto:${data.contact.email}`;
   document.querySelector('.contact-links a:nth-child(2)').href = data.contact.github;
@@ -51,6 +55,6 @@ const renderPortfolio = (data) => {
   while (renderedWalker.nextNode()) repairText(renderedWalker.currentNode);
 };
 
-fetch('content.json?v=4').then((response) => response.json()).then(renderPortfolio).catch(() => {
+fetch('content.json?v=5').then((response) => response.json()).then(renderPortfolio).catch(() => {
   // The HTML contains a fallback version if content.json is unavailable.
 });

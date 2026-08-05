@@ -88,6 +88,14 @@
       ]
     }
   ],
+  "projects": [
+    {"name":"Coru","kicker":"Social & planes","status":"Producto activo","description":"Aplicación para descubrir y organizar planes espontáneos, conectar personas por ubicación y mantener la conversación antes y después de cada encuentro.","features":["Exploración por mapa","Chat en tiempo real","Planes y comunidad"],"tags":["Flutter","Firebase","Riverpod"],"url":"https://github.com/MJGuzman/coruApp","image":"assets/projects/coru.png","accent":"coral","featured":true},
+    {"name":"Ruta Segura RD","kicker":"Movilidad & seguridad","status":"MVP","description":"Experiencia móvil de navegación enfocada en seguridad: rutas, zonas de riesgo, alertas, contactos de confianza y herramientas SOS durante el trayecto.","features":["Rutas seguras","Reportes de riesgo","SOS silencioso"],"tags":["Flutter","REST APIs","Google Maps"],"url":"https://github.com/MJGuzman/RutaSeguraRDApp","image":"assets/projects/ruta.png","accent":"blue","featured":true},
+    {"name":"CitaGo","kicker":"Beauty & wellness","status":"En desarrollo","description":"Plataforma de reservas para clientes, negocios y especialistas de belleza, con agendas por rol, servicios, pagos y reputación.","features":["Reservas por rol","Agenda de negocio","Pagos y valoraciones"],"tags":["Flutter","GetX","Firebase"],"url":"https://github.com/MJGuzman/citago","image":"assets/projects/citago.png","accent":"green"},
+    {"name":"SnapVerify","kicker":"IA & confianza digital","status":"Prototipo","description":"Herramienta móvil para analizar imágenes y videos e identificar señales de contenido generado o manipulado con inteligencia artificial.","features":["Análisis multimedia","Historial local","Privacidad primero"],"tags":["Flutter","Riverpod","AI API"],"image":"assets/projects/snapverify.png","accent":"purple"},
+    {"name":"FinLife","kicker":"Educación financiera","status":"Prototipo","description":"Simulador educativo que convierte decisiones financieras cotidianas en una experiencia de juego con eventos, progreso y consecuencias.","features":["Eventos de vida","Motor financiero","Logros y progreso"],"tags":["Flutter","Provider","Hive"],"image":"assets/projects/finlife.png","accent":"yellow"},
+    {"name":"Hold High","kicker":"Salud & sensores","status":"Prototipo","description":"Asistente postural que utiliza los sensores del dispositivo y el brillo de pantalla para ofrecer recordatorios suaves y privados.","features":["Monitoreo postural","Calibración","Procesamiento local"],"tags":["Flutter","Sensores","Platform channels"],"image":"assets/projects/holdhigh.png","accent":"orange"}
+  ],
   "stack": [
     {
       "icon": "{ }",
